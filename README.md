@@ -1,0 +1,2 @@
+# selectclass
+本项目采用ThinkPHP框架+mysql数据库写的一个学生网上选课系统
