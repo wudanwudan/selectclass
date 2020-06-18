@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../../../public/css/index.css" />
+     <import type='css' file='css.index' />
+</head>
+
+<body class="all">
+    <div class="A">          
+                <form action={:U('/Index/checkLogin')} method="post">
+                    <div class="login">
+                        <div class="title">
+                            用户登录
+                        </div>
+                        <div class="in">
+                            账号：<input type="text" name="username" class="input"/>
+                        </div>
+                        <div class="in">
+                            密码：<input type="password" name="password" class="input"/>
+                        </div>
+                    </div>
+
+                    <div class="login">
+                        <div class="select">
+                            身份：
+                            <select name="role" class="selec">
+                                <option value="student">学生</option>
+                                <option value="teacher">老师</option>
+                                <option value="manager">管理员</option>
+                            </select>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="确定" name="ok" class="butto"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="b"></div>
+</body>
+</html>
