@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>编辑课程</title>
+    <link rel="stylesheet" href="../../public/css/teacher_edit.css" />
+</head>
+
+<body class="all">
+    <ul>
+        <div class="link"><li><a href="{:U('Index/index')}">退出登录</a></li></div>
+        <div class="link"><li><a href="{:U('Teacher/coulist')}">返回</a></li></div>
+    </ul>
+    <div class="B"></div>
+
+    <form method="post" action="{:U('/Teacher/edit_edit')}">
+        <div class="title">编辑课程信息</div>
+        <table cellspacing="0" class="table">
+            <tr>
+                <td class="td1">课程编号</td>
+                <td class="td2"><input type="text" name="CouNo" value="{$Think.session.editCouNo}"></td>
+                <td class="td1">课程名称</td>
+                <td class="td2"><input type="text" name="CouName" value="{$Think.session.editCouName}"></td>
+            </tr>
+            <tr>
+                <td class="td1">老师工号</td>
+                <td class="td2"><input type="text" name="TeaNo" value="{$Think.session.editTeaNo}"></td>
+                <td class="td1">老师名字</td>
+                <td class="td2"><input type="text" name="TeaName" value="{$Think.session.editTeaName}"></td>
+            </tr>
+            <tr>
+                <td class="td1">限定人数</td>
+                <td class="td2"><input type="text" name="LimitNum" value="{$Think.session.editLimitNum}"></td>
+                <td class="td1">课程学分</td>
+                <td class="td2"><input type="text" name="Credit" value="{$Think.session.editCredit}"></td>
+            </tr>
+            <tr>
+                <td class="td1">时间</td>
+                <td class="td2"><input type="text" name="SchoolTime" value="{$Think.session.editSchoolTime}"></td>
+                <td class="td1">地点</td>
+                <td class="td2"><input type="text" name="Location" value="{$Think.session.editLocation}"></td>
+            </tr>
+            <tr>
+                <td class="td1">课时</td>
+                <td class="td2"><input type="text" name="ClassHour" value="{$Think.session.editClassHour}"></td>
+                <td class="td1">实验课时</td>
+                <td class="td2"><input type="text" name="ExpHour" value="{$Think.session.editExpHour}"></td>
+            </tr>
+        </table>
+
+
+        <div class="submit">
+            <input type="submit" value="提交" name="ok" class="button">
+        </div>
+
+    </form>
+
+</body>
+</html>
