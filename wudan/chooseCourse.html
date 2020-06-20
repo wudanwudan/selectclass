@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>学生选课</title>
+	<link rel="stylesheet" href="../../public/css/student_chooseCourse.css" />
+</head>
+
+
+<body class="all">
+<ul>
+		<div class="link"><li><a href="{:U('/Index/index')}">退出登录</a></li></div>
+		<div class="link"><li><a href="{:U('/Student/index')}">返回</a></li></div>
+</ul>
+	<div class="B"></div>
+
+	<table cellspacing="0" class="table">
+		<tr>
+			<td class="title">课程编号</td>
+			<td class="title">课程名称</td>
+			<td class="title">课程老师</td>
+			<td class="title">时间</td>
+			<td class="title">地点</td>
+			<td class="title">学分</td>
+			<td class="title">课时</td>
+			<td class="title">实验课时</td>
+			<td class="title">已选人数</td>
+			<td class="title">人数上限</td>
+			<td class="title">操作</td>
+		</tr>
+
+		<volist name="list" id="vo">
+			<tr>
+				<td class="td">{$vo.CouNo}</td>
+				<td class="td3">{$vo.CouName}</td>
+				<td class="td">{$vo.TeaName}</td>
+				<td class="td">{$vo.SchoolTime}</td>
+				<td class="td">{$vo.Location}</td>
+				<td class="td">{$vo.Credit}</td>
+				<td class="td">{$vo.ClassHour}</td>
+				<td class="td">{$vo.ExpHour}</td>
+				<td class="td">{$vo.ChooseNum}</td>
+				<td class="td">{$vo.LimitNum}</td>
+				<td class="td2">
+					<if condition="$vo[StuNo] eq ''">
+						<a href="{:U("/Student/choseCourseDo/CouNo/$vo[CouNo]")}">添加</a>
+						<else />
+						<c>已选</c>
+					</if>
+				</td>
+			</tr>
+		</volist>
+	</table>
+
+</body>
+</html>
