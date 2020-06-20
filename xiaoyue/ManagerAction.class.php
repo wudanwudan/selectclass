@@ -103,10 +103,10 @@ class ManagerAction extends Action {
         $re=$tea->add($res);
 
         if(!$re){
-            $this->error('学生信息添加失败！');
+            $this->error('教师信息添加失败！');
         }
         else{
-            $this->success('学生信息添加成功！',U('/Manager/tealist'));
+            $this->success('教师信息添加成功！',U('/Manager/tealist'));
         }
     }
 
