@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑管理员信息</title>
+    <link rel="stylesheet" href="../../public/css/manager_manedit.css" />
+</head>
+
+<body class="all">
+<ul>
+    <div class="link"><li><a href="{:U('Index/index')}">退出登录</a></li></div>
+    <div class="link"><li><a href="{:U('Manager/index')}">返回</a></li></div>
+</ul>
+<div class="B"></div>
+
+<form method="post" action="{:U('/Manager/manedit_edit')}">
+    <div class="title">编辑管理员信息</div>
+    <table cellspacing="0" class="table">
+        <tr>
+            <td class="td1">工号</td>
+            <td class="td2"><input type="text" name="ManNo" value="{$Think.session.editManNo}"></td>
+            <td class="td1">姓名</td>
+            <td class="td2"><input type="text" name="ManName" value="{$Think.session.editManName}"></td>
+        </tr>
+        <tr>
+            <td class="td1">初始密码</td>
+            <td class="td2"><input type="text" name="Pwd" value="{$Think.session.editPwd}"></td>
+            <td class="td1"></td>
+            <td class="td2"></td>
+        </tr>
+    </table>
+
+    <div class="submit">
+        <input type="submit" name="Submit" value="提交" class="button">
+    </div>
+</form>
+
+</body>
+</html>

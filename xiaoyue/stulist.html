@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>管理员管理学生</title>
+	<link rel="stylesheet" href="../../public/css/manager_stulist.css" />
+</head>
+
+<body class="all">
+	<ul>
+		<div class="link"><li><a href="{:U('/Index/index')}">退出登录</a></li></div>
+		<div class="link"><li><a href="{:U('/Manager/index')}">返回</a></li></div>
+	</ul>
+	<div class="B"></div>
+
+
+	<table cellspacing="0" class="table">
+		<tr>
+			<td class="title">学号</td>
+			<td class="title">姓名</td>
+			<td class="title">专业/班级</td>
+			<td class="title">性别</td>
+			<td class="title" colspan="2">操作</td>
+		</tr>
+
+		<volist name="list" id="vo">
+		<tr>
+			<td class="td">{$vo.StuNo}</td>
+			<td class="td">{$vo.StuName}</td>
+			<td class="td">{$vo.ClassName}</td>
+			<td class="td">{$vo.Sex}</td>
+			<form method="post" action="{:U('/Manager/stuedit_do')}">
+				<td class="td2">
+					<input type="hidden" name="StuNo" value="{$vo.StuNo}" class="button"/>
+					<input type="submit" value="编辑" class="button"/>
+				</td>
+			</form>
+
+            <td class="td2"><a href="{:U("/Manager/deleteStudent/StuNo/$vo[StuNo]")}" onclick="return confirm('确定删除?')">删除</a></td>
+		</tr>
+		</volist>
+	</table>
+
+</body>
+</html>
